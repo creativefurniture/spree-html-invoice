@@ -1,0 +1,6 @@
+<% buttons = "invoice,packaging_slip"
+   buttons = buttons.split(",").collect{|b| b.strip } %>
+<%  buttons.each do |button| %>
+<%= button_link_to(I18n.t(button.to_s+".print"), invoice_admin_order_path(@order) + "?template=#{button}" ,
+      :target => "_blank") %>
+<%end%>

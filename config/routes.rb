@@ -1,7 +1,11 @@
-Rails.application.routes.draw do
-
+Spree::Core::Engine.routes.prepend do
+  
   namespace :admin do
-    match 'invoice/:id(/:template)' => 'invoice#lasku'
+    resources :orders do
+      member do
+        get :invoice
+      end
+    end
   end
   
 end

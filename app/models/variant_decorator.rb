@@ -1,4 +1,4 @@
-Variant.class_eval do 
+Spree::Variant.class_eval do 
   def full_name
     "#{self.name} #{options_text}"
   end
