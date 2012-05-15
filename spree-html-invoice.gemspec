@@ -2,7 +2,7 @@ version = '0.0.1'
 
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
-  s.name        = 'spree_active_shipping'
+  s.name        = 'spree_html_invoice'
   s.version     = '1.0.0'
   s.authors     = ["Nicholas Watson"]
   s.email       = 'nick@entropi.co'
