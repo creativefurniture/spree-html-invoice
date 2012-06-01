@@ -10,7 +10,17 @@ module HtmlInvoice
         Rails.application.config.cache_classes ? require(c) : load(c)
       end
     end
+    
     config.to_prepare &method(:activate).to_proc
+    
+    # sets the manifests / assets to be precompiled, even when initialize_on_precompile is false
+    initializer "html-invoice.assets.precompile", :group => :all do |app|
+      app.config.assets.precompile += %w[
+        admin/html_invoice.*
+        admin/html_reciept.*
+      ]
+    end
+    
     config.autoload_paths += %W(#{config.root}/lib)
   end
 end
